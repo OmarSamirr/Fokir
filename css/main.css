@@ -72,21 +72,21 @@
   color: #ff305b;
 }
 
-.header .container .header-content p {
+.header .container .header-content p, .header .container .header-content span  {
   font-size: 26px;
   font-weight: 300;
   color: white;
-  display: inline-block;
 }
 
 .header .container .header-content .text {
   background-color: green;
+  position: absolute;
   border-right: 2px solid;
   padding-right: 5px;
-  width: 36%;
+  width: auto;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 3s, cursor 0.4s step-end infinite alternate;
+  animation: typing 2s infinite , delete 2s 2s infinite, cursor 0.4s step-end infinite alternate;
 }
 
 @keyframes cursor {
@@ -99,11 +99,22 @@
   from {
     width: 0;
   }
+  to{
+    width: 100%;
+  }
 }
 
+@keyframes delete {
+  from {
+    width: 100%;
+  }
+  to{
+    width: 0;
+  }
+}
 .header .container .header-content .animation {
   background-color: #ff305b;
-  display: inline-block;
+  position: relative;
 }
 
 .about .container {
@@ -114,8 +125,11 @@
 
 .about .container .image-section {
   position: absolute;
+  width: 550px;
+  height: 460px;
   top: 90px;
   left: 290px;
+  overflow: hidden;
 }
 
 .about .container .image-section img {
@@ -131,33 +145,63 @@
 }
 .about .container .image-section .bg-color {
   position: absolute;
-  top: 30px;
+  top: 460px;
   left: 30px;
   width: 350px;
-  height: 100%;
+  height: 430px;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
+  transition: transform 0.5s;
+  border-radius: 5px;
 }
-.about .container .image-section .img-border{
+
+.image-section:hover .bg-color {
+  transform: translateY(-430px);
+}
+
+.about .container .image-section .img-border {
   width: 350px;
   height: 410px;
   border: 10px solid #555555;
   border-radius: 5px;
 }
 
-.about .container .about-content{
+.about .container .about-content {
   position: absolute;
   width: 35%;
   top: 90px;
   left: 50%;
 }
 
-.about .container .about-content ul li{
+.about .container .about-content ul li {
   list-style-type: none;
-  
+  display: inline-block;
+  padding-top: 20px;
+  color: #555555;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  width: 230px;
+  float: left;
 }
 
-.about .container .about-content .hello{
+.about .container .about-content ul li span {
+  color: #333333;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.about .container .about-content ul li a {
+  text-decoration: none;
+  color: #555555;
+}
+
+.about .container .about-content ul {
+  padding: 0;
+}
+
+.about .container .about-content .hello {
   color: #333333;
   font-family: "Source Sans 3";
   font-size: 34px;
@@ -166,19 +210,18 @@
   left: 20px;
 }
 
-.hello::before{
-content: '';
-background-color: #ff305b;
-position: absolute;
-top: 12px;
-left: -20px;
-height: 25px;
-width: 5px;
-z-index: 1;
+.hello::before {
+  content: "";
+  background-color: #ff305b;
+  position: absolute;
+  top: 12px;
+  left: -20px;
+  height: 25px;
+  width: 5px;
+  z-index: 1;
 }
 
-.about .container .about-content p
-{
+.about .container .about-content p {
   font-size: 16px;
   line-height: 25px;
   font-family: "Roboto";
@@ -187,7 +230,243 @@ z-index: 1;
   padding: 15px 0;
 }
 
-.about .container .about-content hr{
-border: none;
-border-top: 1px dashed #555555;
+.about .container .about-content hr {
+  border: none;
+  border-top: 1px dashed #555555;
+}
+
+.about .container .about-content button {
+  padding: 10px 20px;
+  margin: 20px 10px 10px 0;
+  background-color: #ff305b;
+  border: none;
+  color: white;
+  font-family: "Roboto";
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.icon {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 230px;
+}
+.facebook {
+  left: 110px;
+}
+
+.twitter {
+  left: 150px;
+}
+
+.google {
+  left: 190px;
+}
+
+.github {
+  left: 230px;
+}
+
+.services .title .line-style,
+.portfolio .title .line-style {
+  width: 150px;
+  height: 1px;
+  background-color: #ff305b;
+  position: relative;
+  margin: 15px auto;
+}
+.line-style::before {
+  content: "";
+  width: 100px;
+  height: 1px;
+  background-color: #ff305b;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.line-style::after {
+  content: "";
+  width: 100px;
+  height: 1px;
+  background-color: #ff305b;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.services .title h2 {
+  font-family: "Source Sans 3";
+  font-size: 40px;
+  font-weight: 800;
+  color: #333333;
+}
+.services .title {
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+.services .container {
+  height: 80vh;
+  background-color: #f1f1f1;
+  position: relative;
+}
+.services .service-content {
+  width: 80%;
+  margin: auto;
+  padding: 40px 0;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.services .service-content .item {
+  width: 25%;
+  float: right;
+  text-align: center;
+}
+
+.services .service-content .item h3 {
+  font-size: 24px;
+  font-family: "Source Sans 3";
+  font-weight: 600;
+  color: #333333;
+}
+.services .service-content .item p {
+  font-size: 16px;
+  font-family: "Roboto";
+  font-weight: 400;
+  color: #555555;
+  padding: 0 15px;
+}
+.services .service-content .item i {
+  color: #ff305b;
+  font-size: 36px;
+  margin: 15px 0;
+  transition: scale 0.5s;
+}
+.item:hover .hover-i {
+  scale: 1.3;
+}
+.services .service-content {
+  background-color: transparent;
+  transition: background-color 1s;
+}
+.service-content .bg-color:hover {
+  background-color: white;
+}
+
+.portfolio .title h2 {
+  font-family: "Source Sans 3";
+  font-size: 40px;
+  font-weight: 800;
+  color: #333333;
+}
+
+.portfolio .container {
+  height: 140vh;
+  width: 80%;
+  margin: auto;
+}
+
+.portfolio .title {
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+.portfolio .container .selection {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  top: 140px;
+  left: 180px;
+  transform: translatex(-50%);
+}
+.portfolio .selection .choice {
+  padding: 0 10px;
+  border: none;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  color: #333333;
+  background-color: transparent;
+}
+.portfolio .selection .choice.active {
+  color: #ff305b;
+}
+
+.portfolio .content {
+  width: 100%;
+  position: relative;
+  top: 20%;
+}
+.portfolio .content img {
+  width: 100%;
+  display: block;
+}
+.portfolio .content .inner {
+  width: 90%;
+  margin: auto;
+  position: relative;
+}
+.portfolio .content .item {
+  width: 33.33333%;
+  float: left;
+  margin-bottom: 20px;
+  position: relative;
+}
+.portfolio .content .fade {
+  transition: background-color 0.5s;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.inner:hover .fade {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.numbers .background {
+  background-color: #F1F1F1;
+  position: relative;
+  height: 40vh;
+}
+.numbers .container {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.numbers .item {
+  float: left;
+  text-align: center;
+  width: 25%;
+}
+
+.numbers .item i {
+  font-size: 26px;
+  color: #ff305b;
+  padding: 10px;
+}
+
+.numbers .item .title{
+  font-family: "Source Sans 3";
+  font-weight: 800;
+  font-size: 26px;
+  color: #333333;
+}
+
+.numbers .item .description{
+  font-family: "Source Sans 3";
+  font-weight: 600;
+  font-size: 16px;
+  color: #555;
 }
