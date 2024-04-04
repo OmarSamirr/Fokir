@@ -72,7 +72,8 @@
   color: #ff305b;
 }
 
-.header .container .header-content p, .header .container .header-content span  {
+.header .container .header-content p,
+.header .container .header-content span {
   font-size: 26px;
   font-weight: 300;
   color: white;
@@ -86,7 +87,8 @@
   width: auto;
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 2s infinite , delete 2s 2s infinite, cursor 0.4s step-end infinite alternate;
+  animation: typing 2s infinite, delete 2s 2s infinite,
+    cursor 0.4s step-end infinite alternate;
 }
 
 @keyframes cursor {
@@ -99,7 +101,7 @@
   from {
     width: 0;
   }
-  to{
+  to {
     width: 100%;
   }
 }
@@ -108,7 +110,7 @@
   from {
     width: 100%;
   }
-  to{
+  to {
     width: 0;
   }
 }
@@ -269,7 +271,8 @@
 }
 
 .services .title .line-style,
-.portfolio .title .line-style {
+.portfolio .title .line-style,
+.client-feedback .title .line-style {
   width: 150px;
   height: 1px;
   background-color: #ff305b;
@@ -361,7 +364,8 @@
   background-color: white;
 }
 
-.portfolio .title h2 {
+.portfolio .title h2,
+.client-feedback .title h2 {
   font-family: "Source Sans 3";
   font-size: 40px;
   font-weight: 800;
@@ -433,7 +437,7 @@
 }
 
 .numbers .background {
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
   position: relative;
   height: 40vh;
 }
@@ -457,16 +461,91 @@
   padding: 10px;
 }
 
-.numbers .item .title{
+.numbers .item .title {
   font-family: "Source Sans 3";
   font-weight: 800;
   font-size: 26px;
   color: #333333;
 }
 
-.numbers .item .description{
+.numbers .item .description {
   font-family: "Source Sans 3";
   font-weight: 600;
   font-size: 16px;
   color: #555;
+}
+
+.client-feedback .title {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  top: 100px;
+}
+.client-feedback .card {
+  width: 50%;
+  margin: auto;
+  position: relative;
+  top: 150px;
+  background-color: #f1f1f1;
+  z-index: -2;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.client-feedback .card .container {
+  position: relative;
+  width: 110px;
+  padding: 55px 40px;
+  float: left;
+}
+.client-feedback .card .triangle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-top: 200px solid #ff305b;
+  border-right: 200px solid transparent;
+  z-index: -1;
+}
+.client-feedback .card .container img,
+.client-feedback .card .content .stars img {
+  width: 100%;
+  border-radius: 50%;
+}
+.client-feedback .card .content {
+  padding: 30px 0;
+  float: left;
+  width: 70%;
+}
+.client-feedback .card .content h3 {
+  font-family: "Source Sans 3";
+  font-size: 26px;
+  font-weight: 600;
+  color: #333333;
+  margin: 10px 0;
+}
+
+.client-feedback .card .content span {
+  font-family: "Source Sans 3";
+  font-size: 15px;
+  font-weight: 600;
+  color: #777;
+}
+
+.client-feedback .card .content p {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  color: #555555;
+  font-style: italic;
+  margin-top: 10px;
+}
+.client-feedback .card .content .stars {
+  width: 120px;
+  position: relative;
+  top: 20px;
+  left: -10px;
+}
+.blog{
+  position: relative;
+  top: 100px;
+  width: 100%;
 }
