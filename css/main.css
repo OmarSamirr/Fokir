@@ -327,7 +327,9 @@
 }
 
 .portfolio .title h2,
-.client-feedback .title h2 {
+.client-feedback .title h2,
+.blog .heading h2,
+.contact .heading h2 {
   font-family: "Source Sans 3";
   font-size: 40px;
   font-weight: 800;
@@ -437,6 +439,9 @@
   color: #555;
 }
 
+.client-feedback {
+  height: 80vh;
+}
 .client-feedback .title {
   width: fit-content;
   margin: auto;
@@ -445,7 +450,7 @@
 }
 .client-feedback .card {
   width: 50%;
-  margin: auto;
+  margin: 0 auto 0px;
   position: relative;
   top: 150px;
   background-color: #f1f1f1;
@@ -508,6 +513,148 @@
 }
 .blog {
   position: relative;
-  top: 100px;
   width: 100%;
+  height: 110vh;
+  background-color: #f1f1f1;
+}
+.blog .heading {
+  text-align: center;
+  position: relative;
+  top: 10%;
+}
+.blog .items {
+  width: 80%;
+  position: relative;
+  top: 15%;
+  margin: auto;
+}
+.blog .items img {
+  width: 100%;
+}
+.blog .items .image {
+  width: 100%;
+}
+.blog .items .item {
+  float: left;
+  width: 33%;
+}
+.blog .items .item .inner {
+  width: 90%;
+  margin: auto;
+  background-color: white;
+  overflow: auto;
+}
+
+.blog .element {
+  padding: 10px;
+}
+
+.blog .items .item .content {
+  margin: 20px;
+}
+
+.blog .items .item span,
+.blog .items .item p,
+.blog .items .item a.read-more {
+  color: #555;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  text-decoration: none;
+}
+.blog .items .item a.title {
+  text-decoration: none;
+  color: #333333;
+  font-family: "Source Sans 3";
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 25px;
+  display: inline-block;
+}
+
+.contact {
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+.contact .heading {
+  text-align: center;
+  position: relative;
+  top: 5%;
+}
+
+.contact form {
+  margin: 10px;
+  padding: 0;
+}
+.contact .form {
+  width: 50%;
+  margin: auto;
+  position: relative;
+  top: 10%;
+}
+.contact .form .holder {
+  float: left;
+}
+.contact .name,
+.contact .email {
+  width: 50%;
+}
+.contact .subject {
+  width: 100%;
+}
+.contact .text-area {
+  width: 100%;
+}
+.name-input,
+.email-input {
+  width: 80%;
+}
+input,
+textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+  border: 0.5px solid lightgrey;
+  border-radius: 3px;
+}
+.contact .button {
+  float: left;
+  margin: 15px 25px;
+  padding: 10px;
+  text-transform: uppercase;
+  background-color: #ff305b;
+  border: none;
+  color: white;
+  border-radius: 3px;
+}
+.contact .footer {
+  background-color: #333;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 25vh;
+}
+.contact .footer .i {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 10px;
+}
+.contact .footer span {
+  color: #fff;
+  font-family: "Roboto";
+  font-weight: 400;
+  padding-top: 5px;
+}
+.contact .footer .icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.contact .footer a {
+  text-decoration: none;
+  color: #ff305b;
 }
